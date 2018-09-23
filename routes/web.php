@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Http\Request;//copy dari api.php
 
 /*
 |--------------------------------------------------------------------------
@@ -12,5 +13,29 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    echo "Halaman utama laravel";
+});
+
+Route::get('penjumlahan/{a}/{b}', function($a, $b){
+	echo "Hasil penjumlahan $a + $b = ". ($a+$b);
+});
+
+Route::get('nama/{depan}/{belakang}', function($depan, $belakang){
+	echo "Hai $depan $belakang";
+});
+
+Route::get('pembagian/{c}/{d}', function($c, $d){
+	echo "Hasil Pembagian $c : $d = ". ($c/$d);
+});
+
+Route::get('perkalian/{e}/{f}', function($e, $f){
+	echo "Hasil Perkalian $e x $f = ". ($e*$f);
+});
+
+Route::get('penjumlahan', function(Request $request){
+	// $_GET['a'];
+	// $request->a;
+
+	echo "Hasil penjumlahan $request->a + $request->b = " .($request->a+$request->b);
 });

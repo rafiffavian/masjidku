@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;//kayak import gitu kayak java
+use Illuminate\Support\Facades\DB;//kayak import gitu kayak java copy dari documentasi laravel
 
 
 class FinanceTypesTable extends Seeder
