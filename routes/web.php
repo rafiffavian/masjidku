@@ -12,30 +12,46 @@ use Illuminate\Http\Request;//copy dari api.php
 |
 */
 
-Route::get('/', function () {
-    //return view('welcome');
-    echo "Halaman utama laravel";
-});
+// Route::get('/', function () {
+//     //return view('welcome');
+//     echo "Halaman utama laravel";
+// });
 
-Route::get('penjumlahan/{a}/{b}', function($a, $b){
-	echo "Hasil penjumlahan $a + $b = ". ($a+$b);
-});
 
-Route::get('nama/{depan}/{belakang}', function($depan, $belakang){
-	echo "Hai $depan $belakang";
-});
+// yang baru Tipe1
+// Route::get('/{a}/{b}', 'IndexController@index'); //namanya harus sama kayak public function nya yg ada di controller
 
-Route::get('pembagian/{c}/{d}', function($c, $d){
-	echo "Hasil Pembagian $c : $d = ". ($c/$d);
-});
+// Tipe 2
+// Route::get('/', 'IndexController@index');
+Route::get('show-nama/{nama}', 'IndexController@showNama');
+// Route::get('/{a}/{b}/{c}', 'IndexController@manggilView');
+Route::get('nilai', 'IndexController@manggilView');
+Route::get('/', 'IndexController@manggilBeranda');
 
-Route::get('perkalian/{e}/{f}', function($e, $f){
-	echo "Hasil Perkalian $e x $f = ". ($e*$f);
-});
 
-Route::get('penjumlahan', function(Request $request){
-	// $_GET['a'];
-	// $request->a;
+// Route::get('penjumlahan/{a}/{b}', function($a, $b){
+// 	echo "Hasil penjumlahan $a + $b = ". ($a+$b);
+// });
 
-	echo "Hasil penjumlahan $request->a + $request->b = " .($request->a+$request->b);
-});
+// Route::get('nama/{depan}/{belakang}', function($depan, $belakang){
+// 	echo "Hai $depan $belakang";
+// });
+
+// Route::get('pembagian/{c}/{d}', function($c, $d){
+// 	echo "Hasil Pembagian $c : $d = ". ($c/$d);
+// });
+
+// Route::get('perkalian/{e}/{f}', function($e, $f){
+// 	echo "Hasil Perkalian $e x $f = ". ($e*$f);
+// });
+
+// Route::get('penjumlahan', function(Request $request){
+// 	// $_GET['a'];
+// 	// $request->a;
+
+// 	echo "Hasil penjumlahan $request->a + $request->b = " .($request->a+$request->b);
+// });	
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
