@@ -27,6 +27,13 @@ Route::get('show-nama/{nama}', 'IndexController@showNama');
 // Route::get('/{a}/{b}/{c}', 'IndexController@manggilView');
 Route::get('nilai', 'IndexController@manggilView');
 Route::get('/', 'IndexController@manggilBeranda');
+Route::middleware(['auth','dkm'])->group(function(){
+	Route::get('/home', 'HomeController@index')->name('home');
+});
+Route::middleware(['auth'])->group(function(){
+	Route::get('/admin/profile', 'Admin\MosqueProfileController@index')->name('admin.profile.masjid');
+	Route::post('/admin/profile/masjid/save', 'Admin\MosqueProfileController@save')->name('admin.profile.masjid.save');
+});
 
 
 // Route::get('penjumlahan/{a}/{b}', function($a, $b){
@@ -54,4 +61,3 @@ Route::get('/', 'IndexController@manggilBeranda');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

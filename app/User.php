@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password',//yang diizinkan diisi, guarded kebalikan dari fillable
     ];
 
     /**
@@ -27,4 +27,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function masjid()
+    {
+         return $this->belongsTo(Mosque::class,'mosque_id');//mosque itu nama file yg tadi dibikin
+    }
 }
