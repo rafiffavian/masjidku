@@ -20,18 +20,19 @@ class MosqueProfileController extends Controller
     		'phone' => 'required|numeric|min:10',
     		'latitude' => 'required|numeric',
     		'longtitude' => 'required|numeric',
-    		'address' => 'required'
+    		'address' => 'required',
+    		'description' => 'required'
     	]);
 
     	//cara1
     	// $id_masjid_user = Auth::user()->mosque_id;//Auth nya harus di find use dulu!!!!
     	// if($id_masjid_user == null){
-    	// 	//create
+    	// 	//create_function(args, code)e
     	// 	$masjid 			= new Mosque;//itu mosque nya udah gua ctr shift p. trus find use
     	// 	$masjid->name 		= $request->name; //itu yang name disebelah kiri dari hasil tanda panah itudari field si database, kalo sebelah kanan sama kayak yg diatas!!
     	// 	$masjid->phone 		= $request->telepon;
     	// 	$masjid->latitude 	= $request->latitude;
-    	// 	$masjid->longtitude = $request->longtitude;
+    	// 	$masjid->long2ip(proper_address)titude = $request->longtitude;
     	// 	$masjid->address 	= $request->alamat;
     	// 	$masjid->save();
 
@@ -61,7 +62,9 @@ class MosqueProfileController extends Controller
 	    }
 	    else{
 	    	// Auth::user()->masjid->fill($request->except('_token'))->save();
-	    	Auth::user()->masjid->fill($request->only(['name','phone']))->save();//jadi yg ke update cuman telepon doang
+	    	// Auth::user()->masjid->fill($request->only(['name','phone']))->save();//jadi yg ke update cuman telepon doang
+	    	Auth::user()->masjid->fill($request->except('_token'))->save();
+
 	    }
 	    return redirect(route('admin.profile.masjid'));
 	}

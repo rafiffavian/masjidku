@@ -1,10 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;//kayak import gitu kayak java copy dari documentasi laravel
 
-
-class FinanceTypesTable extends Seeder
+class FinanceTypeTable extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,7 +11,7 @@ class FinanceTypesTable extends Seeder
      */
     public function run()
     {
-         DB::table('finance_type')->insert([[
+        DB::table('finance_type')->insert([[
             'name' => 'infaq Jumat',
             'status' => 'Aktif'
 

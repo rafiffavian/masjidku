@@ -73,6 +73,12 @@
     <textarea class="form-control" id="alamat" name="address">{{Auth::user()->masjid ? Auth::user()->masjid->address : old('address')}}</textarea>
   </div>
 </div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="description">Description</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="description" name="description">{{Auth::user()->masjid ? Auth::user()->masjid->description : old('description')}}</textarea>
+  </div>
+</div>
 
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
