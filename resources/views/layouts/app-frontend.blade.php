@@ -8,7 +8,7 @@
 <html lang="zxx">
 
 <head>
-    <title>Alter Team</title>
+    <title>Update Baru Woy</title>
 
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
