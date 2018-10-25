@@ -8,7 +8,7 @@
 <html lang="zxx">
 
 <head>
-    <title> Inwardly Interior Category Bootstrap Responsive Website Template | Home :: W3layouts</title>
+    <title>DEVELOPMENT</title>
 
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -68,7 +68,7 @@
 						</a>
                             </li>
                             <li class="nav-item cool">
-                                <a class="nav-link" href="about.html">Masjid</a>
+                                <a class="nav-link" href="{{ route('masjid') }}">Masjid</a>
                             </li>
                             <li class="nav-item cool">
                                 <a class="nav-link" href="services.html">Kajian</a>
