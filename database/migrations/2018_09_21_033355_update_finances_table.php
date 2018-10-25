@@ -17,7 +17,7 @@ class UpdateFinancesTable extends Migration
             
             //$table->dropForeign(['id_mosque','id_finance_type']);
 
-            $table->foreign('id_finance_type')->references('id')->on('finance_type');
+            // $table->foreign('id_finance_type')->references('id')->on('finance_type');
         
         });
     }
