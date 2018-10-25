@@ -8,7 +8,7 @@
 <html lang="zxx">
 
 <head>
-    <title>DEVELOPMENT</title>
+    <title>Alter Team</title>
 
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
