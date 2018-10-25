@@ -40,7 +40,7 @@
 										<td>{{$jadwal->description}}</td>
 										<td>
 											<div class="btn btn-group">
-												<a href="{{-- {{ route('admin.jadwal.kajian.edit', $jadwal->id) }}" --}}" class="btn btn-warning btn-xs">
+												<a href="{{ route('admin.akuntansi.catatan-keuangan.edit', $jadwal->id) }}" class="btn btn-warning btn-xs">
 													<i class="fa fa-pencil"> Edit</i>
 												</a>
 												<a href="" class="btn btn-danger btn-xs">

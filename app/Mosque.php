@@ -22,4 +22,12 @@ class Mosque extends Model
     {
         return $this->hasMany(Finance::class, 'id_mosque');
     }
+    public function mosqueImage()
+    {
+        return $this->hasMany(Mosque_image::class, 'id_mosque');
+    }
+    public function mosqueMember()
+    {
+        return $this->hasMany(Mosque_member::class, 'id_mosque');
+    }
 }

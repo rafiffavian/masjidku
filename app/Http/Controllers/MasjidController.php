@@ -23,6 +23,6 @@ class MasjidController extends Controller
     	 $kajiansaya = kajianku::where('id_mosque',$id)->get();
     	 $jumatsaya = FridaySchedule::where('id_mosque',$id)->get();
 
-    	return view('masjid-detail',compact(['masjidgua','kajiansaya','jumatsaya']));
+    	return view('masjid-detail',compact(['masjidgua','kajiansaya','jumatsaya']));  
     }
 }

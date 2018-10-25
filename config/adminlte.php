@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 return [
 
@@ -140,6 +140,16 @@ return [
             'icon'        => 'file',
             'label_color' => 'success',
         ],
+        [
+            'text' => 'Gambar Masjid',
+            'url' => 'admin/image',
+            'icon' => 'image',
+        ],
+        [
+            'text' => 'Member Masjid',
+            'url' => 'admin/member',
+            'icon' => 'user',
+        ],
         'Profile',
         [
             'text' => 'Profile Masjid',
@@ -151,6 +161,7 @@ return [
             'url'  => 'admin/profile/user',
             'icon' => 'user',
         ],
+
         // [
         //     'text'    => 'Multilevel',
         //     'icon'    => 'share',

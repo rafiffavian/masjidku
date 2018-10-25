@@ -25,7 +25,7 @@
                   <label for="id_finance_type">Tipe Catatan</label>
                   <select name="id_finance_type" id="id_finance_type" style="margin-left: 10px">
                    @foreach(App\FinanceType::all() as $item) 
-                    <option value="{{$item->id}}" style="margin-left: 10px">{{$item->name}}</option>
+                      <option value="{{$item->id}}" style="margin-left: 10px">{{$item->name}}</option>
                    @endforeach  
                   </select>
                 </div>

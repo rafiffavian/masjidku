@@ -51,15 +51,33 @@
 		                </div>
 		                <div class="col-md-4">
 		                    <ul class="list-unstyled">
-		                        <li><strong>Pengisi Acara :</strong><span class="pull-right">{{$v->pengisi_acara}}</span></li>
-		                        <li><strong>Tema :</strong><span class="pull-right">{{$v->tema}}</span></li>
-		                        <li><strong>Kategori :</strong><span class="pull-right">{{$v->kategori}}</span></li>
+		                        <li><strong>Pengisi Acara :</strong><span class="pull-right">{{$v->pengisi_acara}}</span></li><br>
+		                        <li><strong>Tema :</strong><span class="pull-right">{{$v->tema}}</span></li><br>
+		                        <li><strong>Kategori :</strong><span class="pull-right">{{$v->kategori}}</span></li><br>
 		                       
 		                    </ul>
 		                </div>
-		            </div>
+		            </div> <br><br>	
 		            @endforeach
-		            
+		        </div>
+		        <h3 align="center" style="margin-top: 30px;">Daftar Jadwal Shalat Jumat</h3>
+		        <hr border="5px" style="border-color: black">
+		        <div class="listing-timings">
+		            @foreach($jumatsaya as $v)	
+		            <div class="row">
+		                <div class="col-md-4">
+		                    <h4>{{$v->date}}</h4>P
+		                </div>
+		                <div class="col-md-4">
+		                    <ul class="list-unstyled">
+		                        <li><strong>Khatib :</strong><span class="pull-right">{{$v->khatib}}</span></li><br>
+		                        <li><strong>Imam :</strong><span class="pull-right">{{$v->imam}}</span></li><br>
+		                        <li><strong>Muadzin :</strong><span class="pull-right">{{$v->muadzin}}</span></li><br>
+		                       
+		                    </ul>
+		                </div>
+		            </div> <br><br>	
+		            @endforeach
 		        </div>
 		        <hr>
 		        <div class="listing-category">

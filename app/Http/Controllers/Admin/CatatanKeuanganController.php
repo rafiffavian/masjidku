@@ -31,4 +31,25 @@ class CatatanKeuanganController extends Controller
         Auth::user()->masjid->Keuangan()->create($request->except('_token'));
         return redirect(route('admin.akuntansi.catatan-keuangan'));
     }
+    public function edit(Request $request, $id)
+    {
+        $catatan = Auth::user()->masjid->Keuangan()->findOrFail($id);
+        return view('admin.catatan-keuangan-edit',[
+
+        'catatanKu' => $catatan
+
+        ]);
+    }
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+
+            'id_finance_type' => 'required',
+            'amount' => 'required',
+            'description' => 'required'
+        ]);
+        $crayonSinchan = Auth::user()->masjid->Keuangan()->findOrFail($id);
+        $crayonSinchan->fill($request->except(['_token','_method']))->save();
+        return redirect (route('admin.akuntansi.catatan-keuangan'));
+    }
 }
