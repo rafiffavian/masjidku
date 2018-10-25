@@ -8,7 +8,7 @@
 <html lang="zxx">
 
 <head>
-    <title>Alter Team</title>
+    <title>Crayon Sinchan</title>
 
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
