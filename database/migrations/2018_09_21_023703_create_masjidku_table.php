@@ -20,6 +20,7 @@ class CreateMasjidkuTable extends Migration
             $table->string('phone',15);
             $table->decimal('longtitude',5,5);
             $table->decimal('latitude',5,5);
+            $table->text('description');
             $table->timestamps();
         });
     }
