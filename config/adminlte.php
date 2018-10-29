@@ -150,6 +150,11 @@ return [
             'url' => 'admin/member',
             'icon' => 'user',
         ],
+        [
+            'text' => 'donation',
+            'url' => 'admin/donation',
+            'icon' => 'money',
+        ],
         'Profile',
         [
             'text' => 'Profile Masjid',
