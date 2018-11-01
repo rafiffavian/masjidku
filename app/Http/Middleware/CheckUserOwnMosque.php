@@ -18,9 +18,9 @@ class CheckUserOwnMosque
     {
 
          // dd(Auth::user()->masjid);
-         if(!Auth::user()->masjid) 
+         if(!Auth::user()->masjid)
             return redirect(route('admin.profile.masjid')); //masjid itu nama function di users.php
-        
+
         return $next($request);
     }
 }

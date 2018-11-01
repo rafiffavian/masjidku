@@ -150,6 +150,7 @@ return [
         JeroenNoten\LaravelAdminLte\ServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
 
+        Yajra\DataTables\DataTablesServiceProvider::class,
         /*
          * Package Service Providers...
          */

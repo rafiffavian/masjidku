@@ -28,11 +28,12 @@ Route::get('show-nama/{nama}', 'IndexController@showNama');
 Route::get('nilai', 'IndexController@manggilView');
 Route::get('/', 'IndexController@manggilBeranda');
 Route::get('/masjid', 'MasjidController@index')->name('masjid');
+Route::get('/jadwalkajian', 'MasjidController@jadwalkajian')->name('jadwalkajian');
 Route::get('/masjid/{id}/detail-masjid', 'MasjidController@detail')->name('masjid.detail');
 Route::middleware(['auth','dkm'])->group(function(){
 	Route::get('/home', 'HomeController@index')->name('home');
 
-	Route::get('/admin/jadwal/shalat-jumat','Admin\JadwalShalatJumatController@index' )->name('admin.jadwal.shalat-jumat');//buat nampilin table
+		Route::get('/admin/jadwal/shalat-jumat','Admin\JadwalShalatJumatController@index' )->name('admin.jadwal.shalat-jumat');//buat nampilin table
 
     Route::get('/admin/jadwal/shalat-jumat/create','Admin\JadwalShalatJumatController@create' )->name('admin.jadwal.shalat-jumat.create');
     Route::post('/admin/jadwal/shalat-jumat/store','Admin\JadwalShalatJumatController@store' )->name('admin.jadwal.shalat-jumat.store');
@@ -90,7 +91,6 @@ Route::middleware(['auth'])->group(function(){
 // 	// $request->a;
 
 // 	echo "Hasil penjumlahan $request->a + $request->b = " .($request->a+$request->b);
-// });	
+// });
 
 Auth::routes();
-
