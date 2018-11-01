@@ -1,9 +1,9 @@
 Instal composer
 Insal XAMPP
 
-Tahapan membuat suatu menu : 
-router, membuat view, controller, model, oprec view  
- 
+Tahapan membuat suatu menu :
+router, membuat view, controller, model, oprec view
+
 Membuat project laravel
     composer create-project --prefer-dist laravel/laravel nama_project
 
@@ -12,7 +12,7 @@ Deklarasiin Link di Router
 Kegunaan router untuk mendaftarkan url, beserta controller dan functionnya
 
 Membuat View (tidak bisa melalui cmd git, jadi hrs difoldernya langsung)
-    namaview.blade.php 
+    namaview.blade.php
 Setelah view dibuat, didalam viewnya body nya diisi konten
 
 Membuat Controller dengan cmd git (sebagai penghubung antara model & view)
@@ -21,9 +21,9 @@ Membuat Controller dengan cmd git (sebagai penghubung antara model & view)
 fungsi detailnya ngapain (contohnya nampilin view)
 
 public function About() {
-      
+
 return view('about');
-    
+
 }
 
 
@@ -36,22 +36,22 @@ return view('about');
 klo update controller
 composer dump_autoload
 
-CSRF untuk menjadi validator, untuk memfilter klo form nya itu dari laravel 
+CSRF untuk menjadi validator, untuk memfilter klo form nya itu dari laravel
 ctrl+u untuk melihat csrf
 ex : <input type="hidden" name="_token" value="XE0oGH4KUs4vEoaXelwjsNzusMGU8bIfgnZkMNBI">
 tandanya sdh divalidasi
 
 Atribut UNSIGNED
-gunanya buat int angka, angkanya ga boleh negatif 
+gunanya buat int angka, angkanya ga boleh negatif
 
-untuk membuka project Laravel di bowser 
+untuk membuka project Laravel di bowser
 php artisan server
 
 Routing -> routes/web.php
-Routing merupakan salah satu fitur yang ada pada framework Laravel, 
-jadi setiap URI yang akan diakses wajib didaftarkan pada Routing. 
+Routing merupakan salah satu fitur yang ada pada framework Laravel,
+jadi setiap URI yang akan diakses wajib didaftarkan pada Routing.
 *name dirouter : nama alias
-php artisan route list 
+php artisan route list
 
 Controller -> app/Http/Controllers
 php artisan make:controller BelajarController
@@ -74,11 +74,11 @@ contoh : Di tengah proyek ada programmer baru yang bergabung, dan harus meng-ins
 ----------------------------------------------------------
 
 Seeder -> insert data ke table
-Seeder merupakan data dummy yang kita buat ketika kita membuat sebuah aplikasi berbasis web, 
-data hasil seeder dapat kita gunakan sebagai data awal untuk keperluan testing ataupun untuk keperluan lain, 
-misalnya data user.  
+Seeder merupakan data dummy yang kita buat ketika kita membuat sebuah aplikasi berbasis web,
+data hasil seeder dapat kita gunakan sebagai data awal untuk keperluan testing ataupun untuk keperluan lain,
+misalnya data user.
 php artisan make:seeder UsersTableSeeder
-composer dump-autoload 
+composer dump-autoload
 php artisan db:seed --class=FinanceTypesTable
 
 laravell
@@ -87,7 +87,7 @@ bukti ke download nya di folder vendor
 
 composer update -> diterminal
 untuk menyesuaikan library yang di composer.json dengan library yang terdapat di dalam folder vendor
-jadi ga ush download lagi, mengikuti composer.json      
+jadi ga ush download lagi, mengikuti composer.json
 
 stiap ada library baru daftarkan di providers config app
 
@@ -95,21 +95,21 @@ Model terletak di App
 php artisan make:model Mosque
 ----------------------------------------------------------
 Middleware : klo di laravel 4 namanya filter
-berperan sebagai “penengah” antara sebuah aplikasi dengan aplikasi lain 
+berperan sebagai ï¿½penengahï¿½ antara sebuah aplikasi dengan aplikasi lain
 untuk mempermudah proses integrasi antara aplikasi-aplikasi tersebut.
 php artisan make:middleware CheckUserOwnMosque
 
-Middleware pada laravel dapat digolongkan kedalam dua kelompok yaitu After Middleware dan Before Middleware. 
-After Middleware merupakan Middleware yang diproses setelah request masuk kedalam Controller, sedangkan 
+Middleware pada laravel dapat digolongkan kedalam dua kelompok yaitu After Middleware dan Before Middleware.
+After Middleware merupakan Middleware yang diproses setelah request masuk kedalam Controller, sedangkan
 Before Middlware merupakan Middleware yang diproses sebelum request masuk kedalam Controller.
 
-Setiap Middleware yang dibuat dapat diregistrasikan secara global sehingga Middleware terssebut akan selalu dipanggil setiap ada request yang masuk. 
+Setiap Middleware yang dibuat dapat diregistrasikan secara global sehingga Middleware terssebut akan selalu dipanggil setiap ada request yang masuk.
 untuk dapat meregistrasikan Middleware yang dibuat secara global, kita dapat menambahkannya di dalam file app/Http/Kernel.php
 
 Middleware dapat diregistrasikan Pada Routes dan controller
-Pada controller dapat memberikan opsi kepada Middleware tersebut agar hanya dieksekusi pada method tertentu saja 
+Pada controller dapat memberikan opsi kepada Middleware tersebut agar hanya dieksekusi pada method tertentu saja
 ataupun meng-_exclude_ beberapa method yang tidak ingin disematkan Middleware.
-----------------------------------------------------------   
+----------------------------------------------------------
 
 controller pake folder
 php artisan make:controller Admin/MosqueProfileController
@@ -127,7 +127,7 @@ digunakan nantinya pada bagian routing
 
 ----------------------------------------------------------
 https://bootsnipp.com/forms, untuk buat form dengan cepat
----------------------------------------------------------- 
+----------------------------------------------------------
 
 Project
 composer create-project laravel/laravel nama_project --prefer-dist
@@ -139,7 +139,7 @@ setting git (klo abis instal)
 git config --global user.name "Ressa Wahyu"
 git config --global user.email ressawahyuramadhan13@gmail.com
 
-git init - di inisialisasi, nanti jadi master, 
+git init - di inisialisasi, nanti jadi master,
 
 ------
 
@@ -149,7 +149,7 @@ git status - buat ngeliat status
 file masih berserakan
 
 git commit -m "Inisialisasi Aplikasi Masjidku" (buat dikerdusin file-file nya)
- 
+
 $ git status
 seandainya hasil nya gini, sudah tidak ada file yang berserakan sudah masuk kardus
 siap dikirim
@@ -158,17 +158,17 @@ nothing to commit, working tree clean
 
 selanjutnya dikirim kesini alamatnya nih
 git remote add origin https://github.com/RessaWahyu13/masjidku.git
- 
+
 paket dikirim
 git push -u origin master
- 
+
 --
 membuat branch
 git branch dev_ressa
 git branch
 
 cara pindah dari master
-git checkout dev_ressa ->otomatis ke download klo baru	
+git checkout dev_ressa ->otomatis ke download klo baru
 
 --
 buat menarik data dari branch temen
@@ -178,10 +178,10 @@ git merge dev_reza
 mau ngepush ke dev_ressa
 git push -u origin dev_ressa
 
---- 
+---
 git add . - buat masukin ke kekardus klo ada file baru
 git commit -m "Inisialisasi Aplikasi Masjidku"
-git push -u origin master 
+git push -u origin master
 
 git clone -> download
 
@@ -189,7 +189,7 @@ git log -> melihat aktivitas
 
 git fetch -> melihat updatean terbaru
 
-git checkout dev_ressa ->otomatis ke download klo baru	
+git checkout dev_ressa ->otomatis ke download klo baru
 
 git pull -> menarik data yg baru
 
@@ -216,3 +216,11 @@ nama_perusahaan,alamat,phone,country_id,email
 -------------
 php artisan storage:link
 ----------------------
+
+----------------------------------------------------
+Membuat data tables menggunakan Yajra laravel
+https://github.com/yajra/laravel-datatables
+instal, tambah provider + alias, optional
+dokumentasi nya
+
+-----------------------------------------------

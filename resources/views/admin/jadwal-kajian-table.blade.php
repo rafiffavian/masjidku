@@ -20,7 +20,7 @@
 							</button>
 						</a>
 
-						<table class="table table-striped table-bordered">
+						<table class="table table-striped table-bordered" id="datatable">
 							<thead>
 								<tr>
 									<th>Tanggal</th>
@@ -60,3 +60,12 @@
 			</div>
 	</div>
 @endsection
+
+@section('js')
+    <script>
+				//ketika sudah halaman sudah ready, bru ditampilkan
+				$(document).ready(function(){
+ 					$('#datatable').DataTable(); 
+				});
+		</script>
+@stop
