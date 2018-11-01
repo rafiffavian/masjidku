@@ -39,11 +39,11 @@
           			<div class="form-group">
           				<label for="finance_type">Tipe Donasi</label>
 	          				
-	          					<select name="id_master_donations " id="id_finance_type" class="form-control">
+	          					<select name="id_master_donations" id="id_finance_type" class="form-control">
 									   		@foreach(App\Master_Donation::all() as $item)
 									   			<option value="{{$item->id}}"@if($tipe->id_master_donations == $item->id) selected='selected' @endif>{{$item->nama}}</option>
 									   		@endforeach
-								 </select>
+								 			</select>
 	          				
           			</div>
           			
