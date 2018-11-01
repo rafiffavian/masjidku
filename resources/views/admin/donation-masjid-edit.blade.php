@@ -29,7 +29,7 @@
           			</div>
           			<div class="form-group">
                   <label for="status">Status</label>
-                  <select name="status" id="id_finance_type" style="margin-left: 10px">
+                  <select name="status" id="id_finance_type" style="margin-left: 10px" class="form-control">
                    
                       <option value="aktif"{{$tipe->status == "aktif"?"selected" : " "}} style="margin-left: 10px">Aktif</option>
                       <option value="tidak aktif"{{$tipe->status == "tidak aktif"?"selected" : " "}} style="margin-left: 10px">Tidak Aktif</option>
@@ -39,7 +39,7 @@
           			<div class="form-group">
           				<label for="finance_type">Tipe Donasi</label>
 	          				
-	          					<select name="id_master_donations" id="id_finance_type">
+	          					<select name="id_master_donations " id="id_finance_type" class="form-control">
 									   		@foreach(App\Master_Donation::all() as $item)
 									   			<option value="{{$item->id}}"@if($tipe->id_master_donations == $item->id) selected='selected' @endif>{{$item->nama}}</option>
 									   		@endforeach
