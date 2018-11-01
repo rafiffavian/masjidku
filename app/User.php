@@ -19,9 +19,9 @@ class User extends Authenticatable
         'name', 'email', 'password',//yang diizinkan diisi, guarded kebalikan dari fillable
     ];
 
-    /**
+    /** 
      * The attributes that should be hidden for arrays.
-     *  
+     *
      * @var array
      */
     protected $hidden = [

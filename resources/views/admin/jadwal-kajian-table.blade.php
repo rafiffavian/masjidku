@@ -3,7 +3,7 @@
 @section('title', 'Jadwal Kajian')
 
 @section('content_header')
-    
+
 @stop
 
 @section('content')
@@ -33,7 +33,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								@foreach(Auth::user()->masjid->jadwalKajianKu()->get() as $jadwal)
+								@foreach(Auth::user()->masjid->jadwalKajianKu()->orderBy('date')->get() as $jadwal)
 									<tr>
 										<td>{{$jadwal->date}}</td>
 										<td>{{$jadwal->tema}}</td>
@@ -48,15 +48,15 @@
 												</a>
 												<a href="" class="btn btn-danger btn-xs">
 				                                	<i class="fa fa-trash"> Hapus</i>
-				                                </a>
+				                </a>
 											</div>
-										</td>	
+										</td>
 									</tr>
-								@endforeach	
+								@endforeach
 							</tbody>
 						</table>
 					</div>
 				</div>
-			</div>	
-	</div>		
+			</div>
+	</div>
 @endsection
