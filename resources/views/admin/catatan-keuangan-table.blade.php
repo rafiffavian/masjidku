@@ -21,7 +21,7 @@
 							</button>
 						</a>
 
-						<table class="table table-striped table-bordered">
+						<table class="table table-striped table-bordered" id="datatable">
 							<thead>
 								<tr>
 									<th>Tanggal</th>
@@ -57,3 +57,10 @@
 			</div>	
 	</div>		
 @endsection
+@section('js')
+	<script>
+		$(document).ready(function(){
+			$('#datatable').DataTable();
+		});
+	</script>
+@stop
