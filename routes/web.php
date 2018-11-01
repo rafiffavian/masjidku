@@ -58,6 +58,11 @@ Route::middleware(['auth','dkm'])->group(function(){
     Route::post('/admin/member/store','Admin\MemberController@store')->name('admin.member.store');
     Route::get('/admin/member/{id}/edit', 'Admin\MemberController@edit')->name('admin.member.edit');
     Route::put('/admin/member/{id}/update', 'Admin\MemberController@update')->name('admin.member.update');
+    Route::get('/admin/donation', 'Admin\DonationController@index')->name('admin.donation');
+    Route::get('/admin/donation/create', 'Admin\DonationController@create')->name('admin.donation.create');
+    Route::post('/admin/donation/store', 'Admin\DonationController@store')->name('admin.donation.store');
+    Route::get('/admin/donation/{id}/edit', 'Admin\DonationController@edit')->name('admin.donation.edit');
+    Route::put('/admin/donation/{id}/update', 'Admin\DonationController@update')->name('admin.donation.update');
 });
 Route::middleware(['auth'])->group(function(){
 	Route::get('/admin/profile', 'Admin\MosqueProfileController@index')->name('admin.profile.masjid');
