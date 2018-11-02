@@ -162,6 +162,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
 
     ],
 
@@ -212,6 +213,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Datatables' => Yajra\DataTables\Facades\DataTables::class,
 
     ],
 

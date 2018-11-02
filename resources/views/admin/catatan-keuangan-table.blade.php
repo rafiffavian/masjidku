@@ -21,7 +21,7 @@
 							</button>
 						</a>
 
-						<table class="table table-striped table-bordered">
+						<table class="table table-striped table-bordered" id="datatable">
 							<thead>
 								<tr>
 									<th>Tanggal</th>
@@ -32,7 +32,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								@foreach(Auth::user()->masjid->Keuangan()->get() as $jadwal)
+								{{-- @foreach(Auth::user()->masjid->Keuangan()->get() as $jadwal)
 									<tr>
 										<td>{{$jadwal->date}}</td>
 										<td>{{$jadwal->tipeCatatan->name}}</td>
@@ -49,7 +49,7 @@
 											</div>
 										</td>	
 									</tr>
-								@endforeach	
+								@endforeach	 --}}
 							</tbody>
 						</table>
 					</div>
@@ -57,3 +57,24 @@
 			</div>	
 	</div>		
 @endsection
+@section('js')
+    <script>
+    	$(document).ready(function() {
+	    $('#datatable').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: '{!! route('admin.akuntansi.catatan-keuangan.getJsonData') !!}',
+        method: "GET",
+        columns: [
+            { data: 'date', name: 'date' },
+            { data: 'id_finance_type', name: 'id_finance_type' },
+            { data: 'amount', name: 'amount' },
+            { data: 'description', name: 'description' },
+            { data: 'id', name: 'id' },
+            
+        ]
+    });
+		});
+</script>
+@stop
+	
