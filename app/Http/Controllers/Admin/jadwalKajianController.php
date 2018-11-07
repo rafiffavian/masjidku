@@ -6,6 +6,7 @@ use App\kajianku;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Datatables;
 
 class jadwalKajianController extends Controller
 {
@@ -30,7 +31,7 @@ class jadwalKajianController extends Controller
     	Auth::user()->masjid->jadwalKajianKu()->create($request->except('_token'));
     	return redirect(route('admin.jadwal.kajian'));
     }
-     
+
      public function edit(Request $request, $idku)
     {
     	// cara pertama nyari id
@@ -55,5 +56,10 @@ class jadwalKajianController extends Controller
     	$jadwalku = Auth::user()->masjid->jadwalKajianKu()->findOrFail($id);
     	$jadwalku->fill($request->except(['_token','_method']))->save();
     	return redirect(route('admin.jadwal.kajian'));
+    }
+
+    public function getJsonData(Request $request)
+    {
+      return Datatables::of(Auth::user()->masjid->jadwalKajianKu()->orderBy('date'))->make(true);
     }
 }

@@ -15,7 +15,7 @@ class UpdateFinancesTable extends Migration
     {
       Schema::table('finances', function (Blueprint $table) {
 
-      $table-> date('date')->nullable()->after('id_finance_type ');
+      $table->date('date')->nullable()->after('id_finance_type');
 
  });
     }

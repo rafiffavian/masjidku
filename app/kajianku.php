@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class kajianku extends Model
 {
     protected $table = "kajian";
@@ -13,5 +14,7 @@ class kajianku extends Model
     {
          return $this->belongsTo(Mosque::class,'id_mosque');
     }
+
+
 
 }

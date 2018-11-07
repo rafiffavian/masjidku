@@ -26,10 +26,17 @@ use Illuminate\Http\Request;//copy dari api.php
 Route::get('show-nama/{nama}', 'IndexController@showNama');
 // Route::get('/{a}/{b}/{c}', 'IndexController@manggilView');
 Route::get('nilai', 'IndexController@manggilView');
+
 Route::get('/', 'IndexController@manggilBeranda');
 Route::get('/masjid', 'MasjidController@index')->name('masjid');
 Route::get('/jadwalkajian', 'MasjidController@jadwalkajian')->name('jadwalkajian');
 Route::get('/masjid/{id}/detail-masjid', 'MasjidController@detail')->name('masjid.detail');
+
+Route::middleware(['auth'])->group(function(){
+	Route::get('/admin/profile', 'Admin\MosqueProfileController@index')->name('admin.profile.masjid');
+	Route::post('/admin/profile/masjid/save', 'Admin\MosqueProfileController@save')->name('admin.profile.masjid.save');
+}); 
+
 Route::middleware(['auth','dkm'])->group(function(){
 	Route::get('/home', 'HomeController@index')->name('home');
 
@@ -63,10 +70,8 @@ Route::middleware(['auth','dkm'])->group(function(){
     Route::post('/admin/donation/store', 'Admin\DonationController@store')->name('admin.donation.store');
     Route::get('/admin/donation/{id}/edit', 'Admin\DonationController@edit')->name('admin.donation.edit');
     Route::put('/admin/donation/{id}/update', 'Admin\DonationController@update')->name('admin.donation.update');
-});
-Route::middleware(['auth'])->group(function(){
-	Route::get('/admin/profile', 'Admin\MosqueProfileController@index')->name('admin.profile.masjid');
-	Route::post('/admin/profile/masjid/save', 'Admin\MosqueProfileController@save')->name('admin.profile.masjid.save');
+
+		Route::get('/admin/jadwal/kajian/getJsonData','Admin\jadwalKajianController@getJsonData')->name('admin.kajian.getJsonData');
 });
 
 

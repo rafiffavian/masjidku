@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Mosque;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth; 
 
 class MosqueProfileController extends Controller
 {
@@ -54,7 +54,6 @@ class MosqueProfileController extends Controller
 
 	    //cara3
 	    if(!Auth::user()->masjid){
-
 	    	$masjid = new Mosque;
 	    	$masjid->fill($request->except('_token'))->save();
 	    	Auth::user()->mosque_id = $masjid->id;
