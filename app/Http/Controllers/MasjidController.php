@@ -15,7 +15,7 @@ class MasjidController extends Controller
     	$listMasjid = Mosque::all();
 
     	return view('masjid', compact('listMasjid')); //catatan, $listMasjid harus sama dengan compact listMasjid
-    } 
+    }
 
     public function detail(Request $request, $id)
     {
@@ -28,9 +28,14 @@ class MasjidController extends Controller
 
     public function jadwalkajian($value='')
     {
-      $listKajian = kajianku::orderBy('date')-> get();
+      $listKajian = kajianku::orderBy('date')->get();
 
     	return view('jadwal-kajian', compact('listKajian')); //catatan, $listMasjid harus sama dengan compact listMasjid
+    }
+
+    public function detailkajian(Request $request, $id)
+    {
+      return view('detail-kajian');
     }
 
 }

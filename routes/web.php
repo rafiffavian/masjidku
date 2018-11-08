@@ -30,12 +30,13 @@ Route::get('nilai', 'IndexController@manggilView');
 Route::get('/', 'IndexController@manggilBeranda');
 Route::get('/masjid', 'MasjidController@index')->name('masjid');
 Route::get('/jadwalkajian', 'MasjidController@jadwalkajian')->name('jadwalkajian');
+Route::get('/detailkajian/{id}', 'MasjidController@detailkajian')->name('detailkajian');
 Route::get('/masjid/{id}/detail-masjid', 'MasjidController@detail')->name('masjid.detail');
 
 Route::middleware(['auth'])->group(function(){
 	Route::get('/admin/profile', 'Admin\MosqueProfileController@index')->name('admin.profile.masjid');
 	Route::post('/admin/profile/masjid/save', 'Admin\MosqueProfileController@save')->name('admin.profile.masjid.save');
-}); 
+});
 
 Route::middleware(['auth','dkm'])->group(function(){
 	Route::get('/home', 'HomeController@index')->name('home');
