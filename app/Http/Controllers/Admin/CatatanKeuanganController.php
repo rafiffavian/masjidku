@@ -8,7 +8,7 @@ use App\FinanceType;
 use App\Keuangan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Datatables;
 
 class CatatanKeuanganController extends Controller
 {
@@ -51,5 +51,10 @@ class CatatanKeuanganController extends Controller
         $crayonSinchan = Auth::user()->masjid->Keuangan()->findOrFail($id);
         $crayonSinchan->fill($request->except(['_token','_method']))->save();
         return redirect (route('admin.akuntansi.catatan-keuangan'));
+    }
+
+    public function getJsonData(Request $request)
+    {
+        return Datatables::of(Auth::user()->masjid->Keuangan())->make(true);
     }
 }

@@ -22,7 +22,7 @@ class CreateFinancesTable extends Migration
             $table->timestamps();
 
             $table->foreign('id_mosque')->references('id')->on('masjidku');
-            $table->foreign('id_finance_type')->references('id')->on('masjidku');
+            $table->foreign('id_finance_type')->references('id')->on('finance_type');
         });
     }
 

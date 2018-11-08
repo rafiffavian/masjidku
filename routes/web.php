@@ -63,6 +63,8 @@ Route::middleware(['auth','dkm'])->group(function(){
     Route::post('/admin/donation/store', 'Admin\DonationController@store')->name('admin.donation.store');
     Route::get('/admin/donation/{id}/edit', 'Admin\DonationController@edit')->name('admin.donation.edit');
     Route::put('/admin/donation/{id}/update', 'Admin\DonationController@update')->name('admin.donation.update');
+
+    Route::get('/admin/akuntansi/catatan-keuangan/getJsonData', 'Admin\CatatanKeuanganController@getJsonData')->name('admin.akuntansi.catatan-keuangan.getJsonData');
 });
 Route::middleware(['auth'])->group(function(){
 	Route::get('/admin/profile', 'Admin\MosqueProfileController@index')->name('admin.profile.masjid');
