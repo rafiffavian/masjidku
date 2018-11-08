@@ -6,13 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Mosque_Donation;
+use Datatables;
 
 class DonationController extends Controller
 {
     public function index()
     {	
-    	$listDonasi = Mosque_Donation::all();
-    	return view('admin.donation-masjid-table',compact('listDonasi'));
+    	// $listDonasi = Mosque_Donation::all();
+    	// return view('admin.donation-masjid-table',compact('listDonasi'));
+        return view('admin.donation-masjid-table');
     }
     public function create()
     {
@@ -52,5 +54,9 @@ class DonationController extends Controller
         $kitaBisa = Auth::user()->masjid->Donasi()->findOrFail($id);
         $kitaBisa->fill($request->except(['_token','_method']))->save();
         return redirect(route('admin.donation'));
+    }
+    public function getJasonData(Request $request)
+    {
+        return Datatables::of(Auth::user()->masjid->Donasi())->make(true);
     }
 }

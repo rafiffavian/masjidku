@@ -58,9 +58,15 @@ Route::middleware(['auth','dkm'])->group(function(){
     Route::post('/admin/akuntansi/catatan-keuangan/store', 'Admin\CatatanKeuanganController@store')->name('admin.akuntansi.catatan-keuangan.store');
     Route::get('/admin/akuntansi/catatan-keuangan/{id}/edit', 'Admin\CatatanKeuanganController@edit')->name('admin.akuntansi.catatan-keuangan.edit');
     Route::put('/admin/akuntansi/catatan-keuangan/{id}/update', 'Admin\CatatanKeuanganController@update')->name('admin.akuntansi.catatan-keuangan.update');
+
+    Route::get('/admin/akuntansi/catatan-keuangan/getJsonData', 'Admin\CatatanKeuanganController@getJsonData')->name('admin.akuntansi.catatan-keuangan.getJsonData');
+
     Route::get('/admin/image', 'Admin\ImageController@index')->name('admin.image');
     Route::get('/admin/image/create', 'Admin\ImageController@create')->name('admin.image.create');
     Route::post('/admin/image/store', 'Admin\ImageController@store')->name('admin.image.store');
+
+        Route::get('/admin/image/getJsonData', 'Admin\ImageController@getJsonData')->name('admin.image.getJsonData');
+
     Route::get('/admin/member', 'Admin\MemberController@index')->name('admin.member');
     Route::get('/admin/member/create', 'Admin\MemberController@create')->name('admin.member.create');
     Route::post('/admin/member/store','Admin\MemberController@store')->name('admin.member.store');
@@ -73,6 +79,13 @@ Route::middleware(['auth','dkm'])->group(function(){
     Route::put('/admin/donation/{id}/update', 'Admin\DonationController@update')->name('admin.donation.update');
 
 		Route::get('/admin/jadwal/kajian/getJsonData','Admin\jadwalKajianController@getJsonData')->name('admin.kajian.getJsonData');
+
+    Route::get('/admin/donation/getJasonData', 'Admin\DonationController@getJasonData')->name('admin.donation.getJasonData');
+});
+Route::middleware(['auth'])->group(function(){
+	Route::get('/admin/profile', 'Admin\MosqueProfileController@index')->name('admin.profile.masjid');
+	Route::post('/admin/profile/masjid/save', 'Admin\MosqueProfileController@save')->name('admin.profile.masjid.save');
+
 });
 
 

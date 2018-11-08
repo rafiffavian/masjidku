@@ -20,7 +20,7 @@
 								<i class="fa fa-plus"></i> Tambah
 							</button>
 						</a>
-						<table class="table table-striped table-bordered">
+						<table class="table table-striped table-bordered" id="datatable">
 	    				<thead>
 	    					<tr>
 	    						<th>Gambar</th>
@@ -30,7 +30,7 @@
 	    					</tr>
 	    				</thead>
 	    				<tbody>
-	    				@foreach($image as $v)
+	    				{{-- @foreach($image as $v)
 	    					<tr>
 	    						<td><img width="50" src="{{url(Storage::url($v->file))}}" alt=""></td>
 	    						<td>{{$v->created_at}}</td>
@@ -43,7 +43,7 @@
 	    							</div>
 	    						</td>
 	    					</tr>
-	    				@endforeach
+	    				@endforeach --}}
 	    				</tbody>
 	    			</table>
 					</div>
@@ -51,3 +51,22 @@
 			</div>	
 	</div>		
 @endsection
+@section('js')
+    <script>
+    	
+    	$(document).ready(function() {
+	    $('#datatable').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: '{!! route('admin.image.getJsonData') !!}',
+        method: "GET",
+        columns: [
+            { data: 'file', name: 'file' },
+            { data: 'created_at', name: 'created_at' },
+            { data: 'updated_at', name: 'updated_at' },
+            { data: 'id', name: 'id' },
+        ]
+    });
+		} );
+    </script>
+@stop
