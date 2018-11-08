@@ -56,6 +56,9 @@ Route::middleware(['auth','dkm'])->group(function(){
     Route::get('/admin/image', 'Admin\ImageController@index')->name('admin.image');
     Route::get('/admin/image/create', 'Admin\ImageController@create')->name('admin.image.create');
     Route::post('/admin/image/store', 'Admin\ImageController@store')->name('admin.image.store');
+
+        Route::get('/admin/image/getJsonData', 'Admin\ImageController@getJsonData')->name('admin.image.getJsonData');
+
     Route::get('/admin/member', 'Admin\MemberController@index')->name('admin.member');
     Route::get('/admin/member/create', 'Admin\MemberController@create')->name('admin.member.create');
     Route::post('/admin/member/store','Admin\MemberController@store')->name('admin.member.store');
