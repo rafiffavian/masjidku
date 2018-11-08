@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mosque_image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Datatables;
 
 class ImageController extends Controller
 {
@@ -13,7 +14,8 @@ class ImageController extends Controller
     {
     	$image = Mosque_image::all();
 
-    	return view('admin.gambar-masjid-table',compact('image'));
+        return view('admin.gambar-masjid-table');
+    	// return view('admin.gambar-masjid-table',compact('image'));
     }
     public function create()
     {
@@ -34,5 +36,9 @@ class ImageController extends Controller
 
 		 Auth::user()->masjid->mosqueImage()->create($data);
         return redirect(route('admin.image'));
+    }
+    public function getJsonData(Request $request)
+    {
+        return Datatables::of(Auth::user()->masjid->mosqueImage())->make(true);
     }
 }

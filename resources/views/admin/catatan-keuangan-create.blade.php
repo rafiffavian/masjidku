@@ -23,9 +23,9 @@
           			</div>
                 <div class="form-group">
                   <label for="id_finance_type">Tipe Catatan</label>
-                  <select name="id_finance_type" id="id_finance_type" class="form-control">
+                  <select name="id_finance_type" id="idjs" class="form-control">
                    @foreach(App\FinanceType::all() as $item) 
-                      <option value="{{$item->id}}" style="margin-left: 10px">{{$item->name}}</option>
+                      <option value="{{$item->id}}">{{$item->name}}</option>
                    @endforeach  
                   </select>
                 </div>
@@ -48,6 +48,7 @@
     </div>
 
 @endsection
+<<<<<<< HEAD
 
 @section('js')
   <script>
@@ -56,3 +57,12 @@
     });
   </script>
 @endsection
+=======
+@section('js')
+    <script>
+        $(document).ready(function() {
+        $('#idjs').select2();
+        } );
+    </script>
+@stop
+>>>>>>> fa654cc1fae4efd9a075861492efff3c88185d8e
