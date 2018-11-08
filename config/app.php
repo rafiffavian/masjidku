@@ -164,6 +164,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
+<<<<<<< HEAD
+=======
+
+>>>>>>> de9cdaf4c63d54b004d335f3fd7ba4fabc4ed62f
     ],
 
     /*

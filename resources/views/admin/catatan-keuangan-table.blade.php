@@ -32,7 +32,24 @@
 								</tr>
 							</thead>
 							<tbody>
-								
+								{{-- @foreach(Auth::user()->masjid->Keuangan()->get() as $jadwal)
+									<tr>
+										<td>{{$jadwal->date}}</td>
+										<td>{{$jadwal->tipeCatatan->name}}</td>
+										<td>{{$jadwal->amount}}</td>
+										<td>{{$jadwal->description}}</td>
+										<td>
+											<div class="btn btn-group">
+												<a href="{{ route('admin.akuntansi.catatan-keuangan.edit', $jadwal->id) }}" class="btn btn-warning btn-xs">
+													<i class="fa fa-pencil"> Edit</i>
+												</a>
+												<a href="" class="btn btn-danger btn-xs">
+				                                	<i class="fa fa-trash"> Hapus</i>
+				                                </a>
+											</div>
+										</td>	
+									</tr>
+								@endforeach	 --}}
 							</tbody>
 						</table>
 					</div>
@@ -41,21 +58,23 @@
 	</div>		
 @endsection
 @section('js')
-	<script>
-		$(document).ready(function(){
-			$('#datatable').DataTable({
-				processing: true,
-				serverSide: true,
-				ajax: '{!! route('admin.akuntansi.catatan-keuangan.getJsonData') !!}',
-				method: "GET",
-				columns: [
-					{ data: 'date', name: 'date' },
-					{ data: 'id_finance_type', name: 'id_finance_type' },
-					{ data: 'amount', name: 'amount' },
-					{ data: 'description', name: 'description' },
-					{ data: 'id', name: 'id' }
-				]
-			});
+    <script>
+    	$(document).ready(function() {
+	    $('#datatable').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: '{!! route('admin.akuntansi.catatan-keuangan.getJsonData') !!}',
+        method: "GET",
+        columns: [
+            { data: 'date', name: 'date' },
+            { data: 'id_finance_type', name: 'id_finance_type' },
+            { data: 'amount', name: 'amount' },
+            { data: 'description', name: 'description' },
+            { data: 'id', name: 'id' },
+            
+        ]
+    });
 		});
-	</script>
+</script>
 @stop
+	

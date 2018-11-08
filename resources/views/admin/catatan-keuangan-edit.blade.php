@@ -35,11 +35,11 @@
 
                 <div class="form-group">
                   <label for="kategori">Tipe Catatan</label><br><br>
-                    <select name="id_finance_type" id="id_finance_type">
+                    <select name="id_finance_type" id="idjs" class="form-control">
                       @foreach(App\FinanceType::all() as $item)
                         <option value="{{$item->id}}"@if($catatanKu->id_finance_type == $item->id) selected='selected' @endif>{{$item->name}}</option>
                       @endforeach  
-                    </select>
+                    </select><br><br>
 
           			<div class="form-group text-right">
           				<button class="btn btn-primary" type="submit">Simpan</button>
@@ -51,3 +51,10 @@
     </div>
 
 @endsection
+@section('js')
+    <script> 
+      $(document).ready(function() {
+        $('#idjs').select2();
+} );  
+    </script>
+@stop

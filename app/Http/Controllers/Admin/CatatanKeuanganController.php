@@ -52,9 +52,10 @@ class CatatanKeuanganController extends Controller
         $crayonSinchan->fill($request->except(['_token','_method']))->save();
         return redirect (route('admin.akuntansi.catatan-keuangan'));
     }
-
+    
     public function getJsonData(Request $request)
     {
         return Datatables::of(Auth::user()->masjid->Keuangan())->make(true);
     }
+    
 }

@@ -23,7 +23,7 @@
           			</div>
                 <div class="form-group">
                   <label for="id_master_donations">Tipe Donasi</label>
-                  <select name="id_master_donations" id="id_master_donations" style="margin-left: 10px">
+                  <select name="id_master_donations" id="id_master_donations" style="margin-left: 10px" class="form-control">
                    @foreach(App\Master_Donation::all() as $item) 
                       <option value="{{$item->id}}" style="margin-left: 10px">{{$item->nama}}</option>
                    @endforeach  
@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group">
                   <label for="status">Status</label>
-                  <select name="status" id="id_finance_type" style="margin-left: 10px">
+                  <select name="status" id="id_status" style="margin-left: 10px" class="form-control">
                    
                       <option value="aktif" style="margin-left: 10px">Aktif</option>
                       <option value="tidak aktif" style="margin-left: 10px">Tidak Aktif</option>
@@ -54,3 +54,11 @@
     </div>
 
 @endsection
+@section('js')
+    <script>
+      $(document).ready(function(){//maksud .ready adalah ketika halaman udah ke load smua baru script yg ada di dlm document di tampilin.
+        $('#id_master_donations,#id_status').select2();
+
+      });
+    </script>
+@stop
