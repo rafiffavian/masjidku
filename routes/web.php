@@ -39,23 +39,34 @@ Route::middleware(['auth','dkm'])->group(function(){
     Route::post('/admin/jadwal/shalat-jumat/store','Admin\JadwalShalatJumatController@store' )->name('admin.jadwal.shalat-jumat.store');
     Route::get('/admin/jadwal/shalat-jumat/{id}/edit','Admin\JadwalShalatJumatController@edit' )->name('admin.jadwal.shalat-jumat.edit');
     Route::put('/admin/jadwal/shalat-jumat/{id}/edit','Admin\JadwalShalatJumatController@update' )->name('admin.jadwal.shalat-jumat.update');//put itu buat method edit/update
+    Route::delete('/admin/jadwal/shalat-jumat/{id}/edit', 'Admin\JadwalShalatJumatController@delete')->name('admin.jadwal.shalat-jumat.delete');
+
+    Route::get('/admin/jadwal/shalat-jumat/getJsonData', 'Admin\JadwalShalatJumatController@getJsonData')->name('admin.jadwal.shalat-jumat.getJsonData');
     Route::get('/admin/jadwal/kajian', 'Admin\jadwalKajianController@index')->name('admin.jadwal.kajian');
 
     Route::get('/admin/jadwal/kajian/create', 'Admin\jadwalKajianController@create')->name('admin.jadwal.kajian.create');
     Route::post('/admin/jadwal/kajian/store', 'Admin\jadwalKajianController@store')->name('admin.jadwal.kajian.store');
     Route::get('/admin/jadwal/kajian/{id}/edit', 'Admin\jadwalKajianController@edit')->name('admin.jadwal.kajian.edit');
-    Route::put('/admin/jadwal/kajian/{id}/edit','Admin\JadwalKajianController@update' )->name('admin.jadwal.kajian.update');//put itu buat method edit/update
+    Route::put('/admin/jadwal/kajian/{id}/update','Admin\JadwalKajianController@update' )->name('admin.jadwal.kajian.update');//put itu buat method edit/update
+    Route::delete('/admin/jadwal/kajian/{id}/delete', 'Admin\JadwalKajianController@delete')->name('admin.jadwal.kajian.delete');
+
+    Route::get('/admin/jadwal/kajian/getJsonData', 'Admin\JadwalKajianController@getJsonData')->name('admin.jadwal.kajian.getJsonData');
+
     Route::get('/admin/akuntansi/catatan-keuangan', 'Admin\CatatanKeuanganController@index')->name('admin.akuntansi.catatan-keuangan');
     Route::get('/admin/akuntansi/catatan-keuangan/create', 'Admin\CatatanKeuanganController@create')->name('admin.akuntansi.catatan-keuangan.create');
     Route::post('/admin/akuntansi/catatan-keuangan/store', 'Admin\CatatanKeuanganController@store')->name('admin.akuntansi.catatan-keuangan.store');
     Route::get('/admin/akuntansi/catatan-keuangan/{id}/edit', 'Admin\CatatanKeuanganController@edit')->name('admin.akuntansi.catatan-keuangan.edit');
     Route::put('/admin/akuntansi/catatan-keuangan/{id}/update', 'Admin\CatatanKeuanganController@update')->name('admin.akuntansi.catatan-keuangan.update');
 
+    Route::delete('/admin/akuntansi/catatan-keuangan/{id}/delete', 'Admin\CatatanKeuanganController@delete')->name('admin.akuntansi.catatan-keuangan.delete');
+
+
     Route::get('/admin/akuntansi/catatan-keuangan/getJsonData', 'Admin\CatatanKeuanganController@getJsonData')->name('admin.akuntansi.catatan-keuangan.getJsonData');
 
     Route::get('/admin/image', 'Admin\ImageController@index')->name('admin.image');
     Route::get('/admin/image/create', 'Admin\ImageController@create')->name('admin.image.create');
     Route::post('/admin/image/store', 'Admin\ImageController@store')->name('admin.image.store');
+    Route::delete('/admin/image/delete', 'Admin\ImageController@delete')->name('admin.image.delete');
 
         Route::get('/admin/image/getJsonData', 'Admin\ImageController@getJsonData')->name('admin.image.getJsonData');
 
@@ -69,6 +80,9 @@ Route::middleware(['auth','dkm'])->group(function(){
     Route::post('/admin/donation/store', 'Admin\DonationController@store')->name('admin.donation.store');
     Route::get('/admin/donation/{id}/edit', 'Admin\DonationController@edit')->name('admin.donation.edit');
     Route::put('/admin/donation/{id}/update', 'Admin\DonationController@update')->name('admin.donation.update');
+
+    Route::delete('/admin/donation/{id}/delete', 'Admin\DonationController@delete')->name('admin.donation.delete');
+
 
     Route::get('/admin/akuntansi/catatan-keuangan/getJsonData', 'Admin\CatatanKeuanganController@getJsonData')->name('admin.akuntansi.catatan-keuangan.getJsonData');
     Route::get('/admin/donation/getJasonData', 'Admin\DonationController@getJasonData')->name('admin.donation.getJasonData');

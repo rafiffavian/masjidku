@@ -39,6 +39,20 @@ class ImageController extends Controller
     }
     public function getJsonData(Request $request)
     {
-        return Datatables::of(Auth::user()->masjid->mosqueImage())->make(true);
+        return Datatables::of(Auth::user()->masjid->mosqueImage())
+            ->addColumn('action', function(Mosque_image $image){
+
+                $url = [];
+
+                $url['detail'] = null;
+                $url['delete'] = route('admin.image.delete', $image->id);
+
+                return $url;
+
+            })
+
+
+
+        ->make(true);
     }
 }

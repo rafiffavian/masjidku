@@ -54,8 +54,29 @@ class CatatanKeuanganController extends Controller
     }
     
     public function getJsonData(Request $request)
+    {   
+        $query = Auth::user()->masjid->Keuangan();
+        $query->with('tipeCatatan'); // unntuk mengizinkan relasi nya untuk di eksekusi
+        // return Datatables::of($query)->make(true);
+
+        return datatables::of($query)
+        ->addColumn('action', function(Finance $finance){
+
+            $url = [];
+
+            $url['detail'] = null;
+            $url['edit'] = route('admin.akuntansi.catatan-keuangan.edit', $finance->id);
+            $url['delete'] = route('admin.akuntansi.catatan-keuangan.delete', $finance->id);
+
+            return $url;
+        })
+        ->make(true);
+    }
+    public function delete(Request $request, $id)
     {
-        return Datatables::of(Auth::user()->masjid->Keuangan())->make(true);
+        $catatan = Auth::user()->masjid->Keuangan()->findOrFail($id);
+        $catatan->delete();
+        return response()->json(['message'=>'Berhasil menghapus data']);
     }
     
 }

@@ -27,13 +27,11 @@
 									<th>Tema</th>
 									<th>Pengisi Acara</th>
 									<th>Kategori</th>
-									<th>created_at</th>
-									<th>updated_at</th>
 									<th>Aksi</th>
 								</tr>
 							</thead>
 							<tbody>
-								@foreach(Auth::user()->masjid->jadwalKajianKu()->orderBy('date')->get() as $jadwal)
+								{{-- @foreach(Auth::user()->masjid->jadwalKajianKu()->orderBy('date')->get() as $jadwal)
 									<tr>
 										<td>{{$jadwal->date}}</td>
 										<td>{{$jadwal->tema}}</td>
@@ -52,7 +50,7 @@
 											</div>
 										</td>
 									</tr>
-								@endforeach
+								@endforeach --}}
 							</tbody>
 						</table>
 					</div>
@@ -62,10 +60,108 @@
 @endsection
 
 @section('js')
+	<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.bootstrap.min.css">
+
+	<script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.bootstrap.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+	<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+	<script src="{{ url('js/sweetalert.min.js') }}"></script>
     <script>
 				//ketika sudah halaman sudah ready, bru ditampilkan
 				$(document).ready(function(){
- 					$('#datatable').DataTable(); 
+ 				let dataTable =	$('#datatable').DataTable({
+				        processing: true,
+				        serverSide: true,
+				        ajax: '{!! route('admin.jadwal.kajian.getJsonData') !!}',
+				        method: "GET",
+				        dom: 'Bfrtip',
+						        buttons: [
+						            'copy', 'csv', 'excel', 'pdf', 'print'
+						        ],
+				        columns: [
+				            { data: 'tanggal_format', name: 'date' },
+				            { data: 'tema', name: 'tema' },
+				            { data: 'pengisi_acara', name: 'pengisi_acara' },
+				            { data: 'kategori', name: 'kategori' },
+				            {
+
+				            	data:'action',
+				            	searchable: false,
+				            	orderable: false,
+				            	className: 'text-center',
+				            	width:90,
+
+				            	render:function (data, type, row, meta){
+
+				            		let links = '<div class="">';
+
+				            		if(data.detail){
+				            			links += '<a href="'+data.detail+'" class="btn btn-xs btn-default"><i class="fa fa-eye"></i></a>&nbsp;';
+				            		}
+				            		if(data.edit){
+				            			links += '<a href="'+data.edit+'" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a>&nbsp;';
+				            		}
+				            		if(data.delete){
+				            			links += '<a href="'+data.delete+'" class="btn btn-xs btn-danger btn-hapus"><i class="fa fa-trash"></i></a>&nbsp;';	
+				            		}
+
+
+				            		links += '</div>';
+				            		return links;
+				            	}
+
+				            },
+				        ]
+				    });
+				     $("#datatable tbody").on("click", "tr a.btn-hapus", function(event){
+
+				    		event.preventDefault(); //menghentikan fungsi utama dari element
+
+				    		var deleteUrl = $(this).attr("href");
+
+				    		swal({
+								  title: "Apakah Anda Yakin?",
+								  text: "Data Akan Di Hapus?",
+								  icon: "warning",
+								  buttons: true,
+								  dangerMode: true,
+								})
+								.then((willDelete) => {
+								  if (willDelete) {
+
+								  	$.ajax({
+
+								  		headers: {
+
+								  			'X-CSRF-TOKEN': "{{ csrf_token() }}"
+								  		},
+								  		url: deleteUrl,
+								  		type: "DELETE",
+								  		dataType: "JSON",
+								  		success: function(res){ //ketika sukses maka menampilkan blabla
+								  			swal(res.message, {
+								      		icon: "success",
+								    		});
+								    		dataTable.ajax.reload(null,false);
+								  		},
+								  		error: function(xhr, status){ //ketika gagal maka menampilkan blabla
+								  			swal("Gagal Menghapus Data");
+								  		}
+
+								  	});
+
+								    // 
+								  } else {
+								    swal("Your imaginary file is safe!");
+								  }
+								});
+				    });
 				});
 		</script>
 @stop

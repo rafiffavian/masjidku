@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group">
                   <label for="amount">Nominal</label> <!-- for di dalem lebel itu merujuk pada id -->
-                  <input type="text" name="amount" id="amount" class="form-control" required="" value="{{ old('amount')}}">
+                  <input type="number" name="amount" id="amount" class="form-control" required="" value="{{ old('amount')}}">
                 </div>
                 <div class="form-group">
                   <label for="description">Keterangan</label>
