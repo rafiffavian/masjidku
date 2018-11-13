@@ -20,5 +20,10 @@ class Kajianku extends Model
          return $this->belongsTo(Mosque::class,'id_mosque');
     }
 
+    public function getTanggalFormatAttribute()
+    {
+        return date('Y-m-d',strtotime($this->date));
+    }
+
 
 }
