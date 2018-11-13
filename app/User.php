@@ -21,7 +21,7 @@ class User extends Authenticatable
 
     /**
      * The attributes that should be hidden for arrays.
-     *  
+     *
      * @var array
      */
     protected $hidden = [
@@ -32,6 +32,11 @@ class User extends Authenticatable
     {
          return $this->belongsTo(Mosque::class,'mosque_id');//mosque itu nama file yg tadi dibikin
     }
+
+    public function role()
+    {
+        return $this->belongsTo(MasterRole::class,'master_role_id');
+    }    
 
     public function tipeCatatan()
     {

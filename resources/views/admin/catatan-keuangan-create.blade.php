@@ -23,15 +23,15 @@
           			</div>
                 <div class="form-group">
                   <label for="id_finance_type">Tipe Catatan</label>
-                  <select name="id_finance_type" id="id_finance_type" style="margin-left: 10px">
+                  <select name="id_finance_type" id="idjs" class="form-control">
                    @foreach(App\FinanceType::all() as $item) 
-                      <option value="{{$item->id}}" style="margin-left: 10px">{{$item->name}}</option>
+                      <option value="{{$item->id}}">{{$item->name}}</option>
                    @endforeach  
                   </select>
                 </div>
                 <div class="form-group">
                   <label for="amount">Nominal</label> <!-- for di dalem lebel itu merujuk pada id -->
-                  <input type="text" name="amount" id="amount" class="form-control" required="" value="{{ old('amount')}}">
+                  <input type="number" name="amount" id="amount" class="form-control" required="" value="{{ old('amount')}}">
                 </div>
                 <div class="form-group">
                   <label for="description">Keterangan</label>
@@ -48,3 +48,21 @@
     </div>
 
 @endsection
+<<<<<<< HEAD
+
+@section('js')
+  <script>
+    $(document).ready(function(){
+      $("#id_finance_type").select2();
+    });
+  </script>
+@endsection
+=======
+@section('js')
+    <script>
+        $(document).ready(function() {
+        $('#idjs').select2();
+        } );
+    </script>
+@stop
+>>>>>>> fa654cc1fae4efd9a075861492efff3c88185d8e

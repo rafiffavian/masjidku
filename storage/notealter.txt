@@ -1,0 +1,17 @@
+XML dan Json itu format, untuk pertukaran data / data exchange. untuk web service.
+vendor itu file2 library yg di download , composer.json kumpulan library.
+kalo vendor ke apus, kita composer .ketik composer update
+
+git status buat ngeliat yg trakhir di update.
+
+buat nge merge kita harus git add . sama git commit dulu, baru pindah ke branch yg mau kita ambil, trus kita pull, abis itu kita checkout lagi ke branch kita abis itu kita merge deh
+eloquent itu model.
+hari ini:
+update finance model, bikin func buat tanggal
+protected append
+guna hidden itu buat ngilangin data, kyk password id dll.
+ngubah controller catatan keuangan
+
+duplicat line
+
+add column

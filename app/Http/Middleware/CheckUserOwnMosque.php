@@ -16,11 +16,11 @@ class CheckUserOwnMosque
      */
     public function handle($request, Closure $next)
     {
-
+ 
          // dd(Auth::user()->masjid);
-         if(!Auth::user()->masjid) 
-            return redirect(route('admin.profile.masjid')); //masjid itu nama function di users.php
-        
-        return $next($request);
+         if(!Auth::user()->masjid)
+         return redirect(route('admin.profile.masjid')); //masjid itu nama function di users.php
+
+         return $next($request);
     }
 }

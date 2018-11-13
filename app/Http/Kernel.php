@@ -61,6 +61,6 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'dkm' => \App\Http\middleware\CheckUserOwnMosque::class,//ctr shift p trus cari php companion fine use, pilih yang namespace
+        'dkm' => \App\Http\Middleware\CheckUserOwnMosque::class,//ctr shift p trus cari php companion fine use, pilih yang namespace
     ];
 }
