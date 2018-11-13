@@ -3,7 +3,7 @@
 @section('title', 'Jadwal Kajian')
 
 @section('content_header')
-    
+
 @stop
 
 @section('content')
@@ -20,7 +20,7 @@
 							</button>
 						</a>
 
-						<table class="table table-striped table-bordered">
+						<table class="table table-striped table-bordered" id="datatable">
 							<thead>
 								<tr>
 									<th>Tanggal</th>
@@ -33,7 +33,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								@foreach(Auth::user()->masjid->jadwalKajianKu()->get() as $jadwal)
+								@foreach(Auth::user()->masjid->jadwalKajianKu()->orderBy('date')->get() as $jadwal)
 									<tr>
 										<td>{{$jadwal->date}}</td>
 										<td>{{$jadwal->tema}}</td>
@@ -48,15 +48,24 @@
 												</a>
 												<a href="" class="btn btn-danger btn-xs">
 				                                	<i class="fa fa-trash"> Hapus</i>
-				                                </a>
+				                </a>
 											</div>
-										</td>	
+										</td>
 									</tr>
-								@endforeach	
+								@endforeach
 							</tbody>
 						</table>
 					</div>
 				</div>
-			</div>	
-	</div>		
+			</div>
+	</div>
 @endsection
+
+@section('js')
+    <script>
+				//ketika sudah halaman sudah ready, bru ditampilkan
+				$(document).ready(function(){
+ 					$('#datatable').DataTable(); 
+				});
+		</script>
+@stop

@@ -30,6 +30,7 @@ class jadwalKajianController extends Controller
     	Auth::user()->masjid->jadwalKajianKu()->create($request->except('_token'));
     	return redirect(route('admin.jadwal.kajian'));
     }
+     
      public function edit(Request $request, $idku)
     {
     	// cara pertama nyari id

@@ -8,13 +8,13 @@
 <html lang="zxx">
 
 <head>
-    <title>Crayon Sinchan</title>
+    <title>Crayon Sinchan Update</title>
 
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta name="keywords" content=" Inwardly
- Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+ Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script>
         addEventListener("load", function() {
@@ -60,7 +60,7 @@
 			</button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    
+
                         <ul class="navbar-nav ml-lg-auto text-center">
                             <li class="nav-item active cool">
                                 <a class="nav-link" href="index.html">Home
@@ -71,12 +71,12 @@
                                 <a class="nav-link" href="{{ route('masjid') }}">Masjid</a>
                             </li>
                             <li class="nav-item cool">
-                                <a class="nav-link" href="services.html">Kajian</a>
+                                <a class="nav-link" href="{{ route('jadwalkajian') }}">Kajian</a>
                             </li>
                             <li class="nav-item cool">
                                 <a class="nav-link" href="gallery.html">Gallery</a>
                             </li>
-                            @if(Auth::check()) 
+                            @if(Auth::check())
                             <li class="nav-item cool">
                                 <a class="nav-link" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -611,7 +611,7 @@
             				  			containerID: 'toTop', // fading element id
             							containerHoverID: 'toTopHover', // fading element hover id
             							scrollSpeed: 1200,
-            							easingType: 'linear' 
+            							easingType: 'linear'
             				 		};
             						*/
 

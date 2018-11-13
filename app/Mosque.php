@@ -30,4 +30,8 @@ class Mosque extends Model
     {
         return $this->hasMany(Mosque_member::class, 'id_mosque');
     }
+    public function Donasi()
+    {
+        return $this->hasMany(Mosque_Donation::class, 'id_mosque');
+    }
 }
