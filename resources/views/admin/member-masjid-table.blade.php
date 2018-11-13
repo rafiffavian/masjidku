@@ -18,7 +18,7 @@
 	    					<i class="fa fa-plus"></i> Tambah
 	    				</button>
 	    			</a>
-	    			<table class="table table-striped table-bordered">
+	    			<table class="table table-striped table-bordered" id="datatable">
 	    				<thead>
 	    					<tr>
 	    						<th>Nama</th>
@@ -31,7 +31,7 @@
 	    					</tr>
 	    				</thead>
 	    				<tbody>
-	    				@foreach($member as $v)
+	    				{{-- @foreach($member as $v)
 	    					<tr>
 	    						<td>{{$v->name}}</td>
 	    						<td>{{$v->position}}</td>
@@ -50,11 +50,18 @@
 	    							</div>
 	    						</td>
 	    					</tr>
-	    				@endforeach
+	    				@endforeach --}}
 	    				</tbody>
 	    			</table>
 	    		</div>
 	    	</div>	
 
     </div>
+@stop
+@section('js')
+    <script>
+		$(document).ready(function() {
+		    $('#datatable').DataTable();
+		} );
+    </script>
 @stop

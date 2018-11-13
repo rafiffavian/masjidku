@@ -57,6 +57,30 @@ class DonationController extends Controller
     }
     public function getJasonData(Request $request)
     {
-        return Datatables::of(Auth::user()->masjid->Donasi())->make(true);
+        // return Datatables::of(Auth::user()->masjid->Donasi())->make(true);
+        $query = Auth::user()->masjid->Donasi();
+        $query->with('tipeDonasi'); // unntuk mengizinkan relasi nya untuk di eksekusi
+        // return Datatables::of($query)->make(true);
+        return datatables::of($query)
+
+        ->addColumn('action', function(Mosque_Donation $donation){
+
+            $url = [];
+
+            $url['detail'] = null;
+            $url['edit'] = route('admin.donation.edit', $donation->id);
+            $url['delete'] = route('admin.donation.delete', $donation->id);
+
+            return $url;
+        })
+
+        ->make(true);
     }
+    public function delete(Request $request, $id)
+    {
+        $tipeDonasi = Auth::user()->masjid->Donasi()->findOrFail($id);
+        $tipeDonasi->delete();
+        return response()->json(['message'=>'Berhasil menghapus data']);
+    }
+
 }
