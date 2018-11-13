@@ -17,7 +17,7 @@ class JadwalShalatJumatController extends Controller
     public function create()
     {
     	return view('admin.jadwal-shalat-jumat-form-create');
-    }
+    }  
     public function store(Request $request)
     {
     	$request->validate([

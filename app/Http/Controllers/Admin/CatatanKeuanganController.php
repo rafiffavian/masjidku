@@ -78,5 +78,4 @@ class CatatanKeuanganController extends Controller
         $catatan->delete();
         return response()->json(['message'=>'Berhasil menghapus data']);
     }
-    
 }

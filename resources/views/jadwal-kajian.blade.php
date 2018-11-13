@@ -5,10 +5,6 @@
 <style media="screen">
 @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
-body {
-padding: 60px 0px;
-background-color: rgb(220, 220, 220);
-}
 
 .event-list {
 list-style: none;
@@ -196,13 +192,11 @@ padding: 10px 0px 9px;
 }
 </style>
 
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <!------ Include the above in your HEAD tag ---------->
     <div class="container">
+    <h3 style="margin-top:2px"><b><center>JADWAL KAJIAN</b></center></h3>
 		<div class="row">
-			<div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+			<div class="[ col-xs-12 col-sm-offset-2 col-sm-12 ]">
 		    @foreach($listKajian as $item)
         <br>
         <ul class="event-list">
@@ -216,11 +210,13 @@ padding: 10px 0px 9px;
 						<img alt="My 24th Birthday!" src="https://farm5.staticflickr.com/4150/5045502202_1d867c8a41_q.jpg" />
 						<div class="info">
 							<h2 class="title">{{$item->pengisi_acara}}</h2>
-							<p class="desc"> Tema : {{$item->tema}} <br> Masjid&nbsp;&nbsp;&nbsp;: {{ $item->dataMasjid->name }} <br> Kategori : {{ $item->kategori }} </p>
+							<p class="desc"><b>Tema&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{$item->tema}} <br>
+                                 Masjid&nbsp;&nbsp;&nbsp;: {{ $item->dataMasjid->name }} <br>
+                              </b></p>
 							<ul>
-								<li style="width:33%;">1 <span class="glyphicon glyphicon-ok"></span></li>
-								<li style="width:34%;">3 <span class="fa fa-question"></span></li>
-								<li style="width:33%;">103 <span class="fa fa-envelope"></span></li>
+								{{-- <li style="width:33%;">1 <span class="glyphicon glyphicon-ok"></span></li>
+								<li style="width:34%;">3 <span class="fa fa-question"></span></li> --}}
+								<a href="{{ route('detailkajian', $item->id) }}" style="width:33%;"><b>Detail >> </b></a>
 							</ul>
 						</div>
 						<div class="social">

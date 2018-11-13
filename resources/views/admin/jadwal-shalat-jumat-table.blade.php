@@ -3,26 +3,28 @@
 @section('title', 'Jadwal Shalat Jumat')
 
 @section('content_header')
-    
+
 @stop
 
 @section('content')
 
     <div class="box box-primary">
             <div class="box-header with-border">
-              <h4 class="box-title">Jadwal Shalat Jumat
-                  <a href="{{ route('admin.jadwal.shalat-jumat.create')}}">
+              <h3 class="box-title">Jadwal Shalat Jumat
+
+                <a href="{{ route('admin.jadwal.shalat-jumat.create')}}">
                   <button class="btn btn-primary btn-xs">
                     <i class="fa fa-plus"></i>Tambah
                   </button>
-                </a>    
+                </a>
 
-              </h4>
+              </h3>
             </div>
 	    <div class="box-body">
           <div class="row">
             <div class="col-md-12">
-                
+
+
                 <table class="table table-striped table-bordered" id="datatable">
                   <thead>
                     <tr>
@@ -60,9 +62,9 @@
                 </table>
             </div>
           </div>
-          <a href="{{ route('admin.jadwal.shalat-jumat.create')}}"><button class="btn btn-primary btn"> <i class="fa fa-plus"></i>Tambah</button></a>
       </div>
     </div>
+@endsection
 
 @endsection
 @section('js')

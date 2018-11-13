@@ -28,7 +28,7 @@ class ImageController extends Controller
 
     		'file' => 'required'
     	]);
-
+       
 		 $path = $request->file('file')->store('public/fileupload');
 		 $data = [
 		 	'file' => $path

@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
-class kajianku extends Model
+
+class Kajianku extends Model
 {
  	use SoftDeletes;
     protected $dates = ['deleted_at'];
@@ -19,9 +20,5 @@ class kajianku extends Model
          return $this->belongsTo(Mosque::class,'id_mosque');
     }
 
-    public function getTanggalFormatAttribute()
-    {
-    	return date("d F Y", strtotime($this->date));
-    }
 
 }

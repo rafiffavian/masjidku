@@ -53,19 +53,18 @@
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <h1><a class="navbar-brand" href="index.html">
-				<span class="fab fa-osi"></span>  Inwardly
-                </a></h1>
+				                <span class="fab fa-osi"></span>  Masjidku
+                    </a></h1>
                     <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+				            <span class="navbar-toggler-icon"></span>
+			              </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
                         <ul class="navbar-nav ml-lg-auto text-center">
                             <li class="nav-item active cool">
-                                <a class="nav-link" href="index.html">Home
-							<span class="sr-only">(current)</span>
-						</a>
+                                <a class="nav-link" href="{{ route('beranda') }}">Home
+							                  <span class="sr-only">(current)</span>
+						                    </a>
                             </li>
                             <li class="nav-item cool">
                                 <a class="nav-link" href="{{ route('masjid') }}">Masjid</a>
@@ -74,7 +73,7 @@
                                 <a class="nav-link" href="{{ route('jadwalkajian') }}">Kajian</a>
                             </li>
                             <li class="nav-item cool">
-                                <a class="nav-link" href="gallery.html">Gallery</a>
+                                <a class="nav-link" href="{{ route('masjid.artikel') }}">Artikel</a>
                             </li>
                             @if(Auth::check())
                             <li class="nav-item cool">
@@ -92,14 +91,9 @@
                             <li class="nav-item cool">
                                 <a class="nav-link" href="{{ route('login')}}">Login DKM</a>
                             </li>
-                            <li class="nav-item cool">
-                                <a class="nav-link" href="{{ route('register')}}">Register DKM</a>
-                            </li>
                             @endif
                             <li class="nav-item dropdown cool">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Blog
-						</a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="blog.html">Blog Page</a>
                                     <a class="dropdown-item" href="single.html">Single page</a>
@@ -128,16 +122,13 @@
                                     </form>
                                 </div>
                             </li>
-
                             <!-- /search -->
-
                         </ul>
-
-
                     </div>
                 </nav>
             </div>
         </header>
+
         <!-- //header -->
         <div class="callbacks_container">
             <ul class="rslides" id="slider3">

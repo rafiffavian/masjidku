@@ -3,7 +3,7 @@
 @section('title', 'Catatan Keuangan')
 
 @section('content_header')
-    
+
 @stop
 
 @section('content')
@@ -49,15 +49,15 @@
 				                                	<i class="fa fa-trash"> Hapus</i>
 				                                </a>
 											</div>
-										</td>	
+										</td>
 									</tr>
 								@endforeach	 --}}
 							</tbody>
 						</table>
 					</div>
 				</div>
-			</div>	
-	</div>		
+			</div>
+	</div>
 @endsection
 @section('js')
 	<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">

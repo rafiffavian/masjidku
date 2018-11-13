@@ -6,15 +6,15 @@
 -->
 <!DOCTYPE html>
 <html lang="zxx">
-
+ 
 <head>
-    <title> Inwardly Interior Category Bootstrap Responsive Website Template | About :: W3layouts</title>
+    <title>Masjidku</title>
     <base href="{{url('/')}}/"/>
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta name="keywords" content=" Inwardly
- Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+ Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script>
         addEventListener("load", function() {
@@ -53,14 +53,14 @@
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <h1><a class="navbar-brand" href="index.html">
-				<span class="fab fa-osi"></span>  Inwardly
+				<span class="fab fa-osi"></span>  Masjidku
                 </a></h1>
                     <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                       
+
                         <ul class="navbar-nav ml-lg-auto text-center">
                             <li class="nav-item cool">
                                 <a class="nav-link" href="index.html">Home
@@ -112,7 +112,7 @@
                         <!-- /search -->
 
                         </ul>
-                      
+
 
                     </div>
                 </nav>
@@ -134,7 +134,7 @@
     @yield('content')
 
     <!--/banner-bottom-w3ls-->
-    
+
     <!-- //bottom-last -->
     <!--/footer-->
     <footer class="footer-main-w3layouts py-md-5 py-4">
@@ -425,7 +425,7 @@
             				  			containerID: 'toTop', // fading element id
             							containerHoverID: 'toTopHover', // fading element hover id
             							scrollSpeed: 1200,
-            							easingType: 'linear' 
+            							easingType: 'linear'
             				 		};
             						*/
 
