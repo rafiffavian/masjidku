@@ -5,11 +5,18 @@ namespace App\Http\Controllers;
 use App\FridaySchedule;
 use App\Mosque;
 use App\kajianku;
+use App\Artikel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class MasjidController extends Controller
 {
+
+    public function beranda()
+    {
+      return view('beranda');
+    }
+
     public function index()
     {
     	$listMasjid = Mosque::all();
@@ -35,7 +42,20 @@ class MasjidController extends Controller
 
     public function detailkajian(Request $request, $id)
     {
-      return view('detail-kajian');
+      $listkajian = kajianku::findOrFail($id);
+      return view('detail-kajian', compact('listkajian'));
     }
+
+    public function artikel(){
+      $listartikel = Artikel::all();
+      return view('artikel',compact('listartikel'));
+    }
+
+    // public function detailkajian(Request $request, $id)
+    // {
+    //   $listka = kajianku::findOrFail($id);
+    //
+    //   return view('detail-kajian',compact('kajiansaya'));
+    // }
 
 }

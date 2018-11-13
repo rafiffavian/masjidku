@@ -5,10 +5,6 @@
 <style media="screen">
 @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
-body {
-padding: 0px 0px;
-background-color: rgb(220, 220, 220);
-}
 
 .event-list {
 list-style: none;
@@ -198,7 +194,7 @@ padding: 10px 0px 9px;
 
   <!------ Include the above in your HEAD tag ---------->
     <div class="container">
-    <h1><center>Jadwal Kajian</center></h1>
+    <h3 style="margin-top:2px"><b><center>JADWAL KAJIAN</b></center></h3>
 		<div class="row">
 			<div class="[ col-xs-12 col-sm-offset-2 col-sm-12 ]">
 		    @foreach($listKajian as $item)
@@ -220,7 +216,7 @@ padding: 10px 0px 9px;
 							<ul>
 								{{-- <li style="width:33%;">1 <span class="glyphicon glyphicon-ok"></span></li>
 								<li style="width:34%;">3 <span class="fa fa-question"></span></li> --}}
-								<a href="{{ route('detailkajian') }}" style="width:33%;"><b>Detail >> </b></a>
+								<a href="{{ route('detailkajian', $item->id) }}" style="width:33%;"><b>Detail >> </b></a>
 							</ul>
 						</div>
 						<div class="social">

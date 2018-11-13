@@ -114,12 +114,21 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+
         [
             'text'        => 'Dashboard',
             'url'         => 'home',
             'icon'        => 'file',
             'label_color' => 'success',
         ],
+
+        [
+              'text'    => 'Artikel',
+              'url'     => 'admin/article',
+              'icon'    => 'file',
+        ],
+
+
         [
             'text'    => 'Jadwal',
             'icon'    => 'share',

@@ -3,7 +3,7 @@
 @section('title', 'Jadwal Shalat Jumat')
 
 @section('content_header')
-    
+
 @stop
 
 @section('content')
@@ -30,11 +30,11 @@
           					<div>
           						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="kategori" id="kategori" value="Laki-Laki"@if(old('kategori')) checked @endif>Laki-Laki </div><br>
 	          				<div>
-	          				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="kategori" id="kategori" value="Perempuan"@if(old('kategori')) checked @endif>Perempuan 
+	          				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="kategori" id="kategori" value="Perempuan"@if(old('kategori')) checked @endif>Perempuan
 	          				</div><br>
 	          				<div>
 	          					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="kategori" id="kategori" value="Laki-Laki&Perempuan"@if(old('kategori')) checked @endif>
-	    						Laki-Laki & Perempuan
+	    						Laki-Laki & Perempuan 
 	          				</div><br>
           			</div>
           			<div class="form-group">

@@ -23,7 +23,7 @@ class CreateMosqueMemberTable extends Migration
             $table->timestamps();
             $table->foreign('id_mosque')->references('id')->on('masjidku');
         });
-    }
+    }  
 
     /**
      * Reverse the migrations.

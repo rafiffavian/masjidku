@@ -6,6 +6,7 @@ use App\FridaySchedule;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Datatables;
 
 class JadwalShalatJumatController extends Controller
 {
@@ -16,7 +17,7 @@ class JadwalShalatJumatController extends Controller
     public function create()
     {
     	return view('admin.jadwal-shalat-jumat-form-create');
-    }
+    }  
     public function store(Request $request)
     {
     	$request->validate([
@@ -55,4 +56,9 @@ class JadwalShalatJumatController extends Controller
     	$jadwal->fill($request->except(['_token','_method']))->save();
     	return redirect(route('admin.jadwal.shalat-jumat'));
   	}
+
+    public function getJsonData(Request $request)
+    {
+      return Datatables::of(Auth::user()->masjid->jadwalJumatan()->orderBy('date'))->make(true);
+    }
 }
