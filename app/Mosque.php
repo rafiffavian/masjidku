@@ -16,7 +16,7 @@ class Mosque extends Model
     }
     public function jadwalKajianKu()
     {
-    	return $this->hasMany(kajianku::class, 'id_mosque');
+    	return $this->hasMany(Kajianku::class, 'id_mosque');
     }
     public function Keuangan()
     {

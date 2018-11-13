@@ -34,33 +34,31 @@ Route::get('/jadwalkajian', 'MasjidController@jadwalkajian')->name('jadwalkajian
 Route::get('/jadwalkajian/{id}/detail-kajian', 'MasjidController@detailkajian')->name('detailkajian');
 Route::get('/artikel','MasjidController@artikel')->name('masjid.artikel');
 
-		Route::middleware(['auth'])->group(function(){
-		Route::get('/admin/profile', 'Admin\MosqueProfileController@index')->name('admin.profile.masjid');
-		Route::post('/admin/profile/masjid/save', 'Admin\MosqueProfileController@save')->name('admin.profile.masjid.save');
-		});
+Route::middleware(['auth'])->group(function(){
+    Route::get('/admin/profile', 'Admin\MosqueProfileController@index')->name('admin.profile.masjid');
+	Route::post('/admin/profile/masjid/save', 'Admin\MosqueProfileController@save')->name('admin.profile.masjid.save');
+});
 
-		Route::middleware(['auth','dkm'])->group(function(){
-		Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware(['auth','dkm'])->group(function(){
+	Route::get('/home', 'HomeController@index')->name('home');
 
-		Route::get('/admin/jadwal/shalat-jumat','Admin\JadwalShalatJumatController@index' )->name('admin.jadwal.shalat-jumat');//buat nampilin table
+	Route::get('/admin/jadwal/shalat-jumat','Admin\JadwalShalatJumatController@index' )->name('admin.jadwal.shalat-jumat');//buat nampilin table
     Route::get('/admin/jadwal/shalat-jumat/create','Admin\JadwalShalatJumatController@create' )->name('admin.jadwal.shalat-jumat.create');
     Route::post('/admin/jadwal/shalat-jumat/store','Admin\JadwalShalatJumatController@store' )->name('admin.jadwal.shalat-jumat.store');
     Route::get('/admin/jadwal/shalat-jumat/{id}/edit','Admin\JadwalShalatJumatController@edit' )->name('admin.jadwal.shalat-jumat.edit');
     Route::put('/admin/jadwal/shalat-jumat/{id}/edit','Admin\JadwalShalatJumatController@update' )->name('admin.jadwal.shalat-jumat.update');//put itu buat method edit/update
     Route::delete('/admin/jadwal/shalat-jumat/{id}/edit', 'Admin\JadwalShalatJumatController@delete')->name('admin.jadwal.shalat-jumat.delete');
-
     Route::get('/admin/jadwal/shalat-jumat/getJsonData', 'Admin\JadwalShalatJumatController@getJsonData')->name('admin.jadwal.shalat-jumat.getJsonData');
-    Route::get('/admin/jadwal/kajian', 'Admin\jadwalKajianController@index')->name('admin.jadwal.kajian');
 
-    Route::get('/admin/jadwal/kajian', 'Admin\jadwalKajianController@index')->name('admin.jadwal.kajian');
-    Route::get('/admin/jadwal/kajian/create', 'Admin\jadwalKajianController@create')->name('admin.jadwal.kajian.create');
-    Route::post('/admin/jadwal/kajian/store', 'Admin\jadwalKajianController@store')->name('admin.jadwal.kajian.store');
-    Route::get('/admin/jadwal/kajian/{id}/edit', 'Admin\jadwalKajianController@edit')->name('admin.jadwal.kajian.edit');
+    Route::get('/admin/jadwal/kajian', 'Admin\JadwalKajianController@index')->name('admin.jadwal.kajian');
+    Route::get('/admin/jadwal/kajian/create', 'Admin\JadwalKajianController@create')->name('admin.jadwal.kajian.create');
+    Route::post('/admin/jadwal/kajian/store', 'Admin\JadwalKajianController@store')->name('admin.jadwal.kajian.store');
+    Route::get('/admin/jadwal/kajian/{id}/edit', 'Admin\JadwalKajianController@edit')->name('admin.jadwal.kajian.edit');
     Route::put('/admin/jadwal/kajian/{id}/update','Admin\JadwalKajianController@update' )->name('admin.jadwal.kajian.update');//put itu buat method edit/update
     Route::delete('/admin/jadwal/kajian/{id}/delete', 'Admin\JadwalKajianController@delete')->name('admin.jadwal.kajian.delete');
 
     Route::put('/admin/jadwal/kajian/{id}/edit','Admin\JadwalKajianController@update' )->name('admin.jadwal.kajian.update');//put itu buat method edit/update
-	Route::get('/admin/jadwal/kajian/getJsonData','Admin\JadwalKajianController@getJsonData')->name('admin.kajian.getJsonData');
+	Route::get('/admin/jadwal/kajian/getJsonData','Admin\JadwalKajianController@getJsonData')->name('admin.jadwal.kajian.getJsonData');
 
     Route::get('/admin/akuntansi/catatan-keuangan', 'Admin\CatatanKeuanganController@index')->name('admin.akuntansi.catatan-keuangan');
     Route::get('/admin/akuntansi/catatan-keuangan/create', 'Admin\CatatanKeuanganController@create')->name('admin.akuntansi.catatan-keuangan.create');

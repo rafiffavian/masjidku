@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\kajianku;
+use App\Kajianku;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
 
-class jadwalKajianController extends Controller
+class JadwalKajianController extends Controller
 {
     public function index()
     {
@@ -60,7 +60,7 @@ class jadwalKajianController extends Controller
     public function getJsonData(Request $request)
     {
         return Datatables::of(Auth::user()->masjid->jadwalKajianKu())
-        ->addColumn('action', function(kajianku $Kajianku){
+        ->addColumn('action', function(Kajianku $Kajianku){
 
             $url = [];
 
